@@ -1,10 +1,10 @@
-﻿@model Vidly.Models.CustomerViewModel.CustomerIndexViewModel
+﻿@model List<Customer>
 @{
     ViewData["Title"] = "Customers";
 }
 
 <h2>Customers</h2>
-@if (Model.Customers.Count == 0)
+@if (Model == null)
 {
     <text>We don't have any customers yet.</text>
 }
@@ -15,7 +15,7 @@ else
             <th>Customers</th>
         </tr>
 
-        @foreach (Customer cust in Model.Customers)
+        @foreach (Customer cust in Model)
         {
             <tr>
                 <td>@Html.ActionLink(cust.Name, "Details", "Customers", new {Id = cust.Id })</td>
