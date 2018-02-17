@@ -1,0 +1,22 @@
+﻿@model List<Movie>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Movies</h2>
+
+
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>Movies</th>
+    </tr>
+
+    @foreach (Movie mov in Model)
+    {
+        <tr>
+            <td>@mov.Name</td>
+        </tr>
+
+    }
+
+</table>
